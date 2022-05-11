@@ -7,5 +7,15 @@ Docker sanallaştırma ve geliştirme ortamlarının yaratılması için gerekli
 # NGINX Proxy Manager
 
 ## Kullanım Amacı
+Nginx bir web server uygulaması bir techstack de bilgisayarımızda çalıştıracağımız projeler için SSL ve yerel bilgisayarımızdak domainleri ilk geleceği durak olacak.
+
+Daha detaylı anlatmak gerekirse https://kargo.gurmehub.dev => Nginx => localhost:8000 (laravel kargo dockeri) şeklinde çalışacak.
+
 ## Nasıl Kurulur
+
+Komut satırında
+```
+cd nginx-proxy-manager
+docker-compose up -d
+```
 ## Yapılandırma
