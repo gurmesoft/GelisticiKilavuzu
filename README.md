@@ -13,7 +13,10 @@ Daha detaylı anlatmak gerekirse https://kargo.gurmehub.dev => Nginx => localhos
 
 ## Nasıl Kurulur
 
-Komut satırında
+Komut satırında ilgili klasöre giriş yapıp docker-compose ile kurulumu yapabilirsiniz. 80 ve 443 nolu portu dinleyen bir uygulama varsa kapatmanız gerekiyor. Kurulum sonrasında bilgisayarınızdaki 80 nolu porta gelen istekleri artık nginx karşılamaya başlayacak. Kendi domainlerimizi eklemek ve ayar yapmak için http://localhost:81 nolu adresi kullanacağız.
+
+(https://nginxproxymanager.com/)
+
 ```
 cd nginx-proxy-manager
 docker-compose up -d
