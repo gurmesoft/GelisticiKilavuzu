@@ -8,7 +8,24 @@ Kurulum sonrasında WSL 2 installtion is incomplete şeklide uyarı alırsanız.
 
 https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi adresinden güncellemeyi yüklemeniz gerekebilir.
 
-# 2. NGINX Proxy Manager
+## Containerlar için Network Oluşturuluması
+
+Kullanacağımız containerları yerel makineden izole etmek için bridge bir network yaratıyoruz bu networku containerlarda kullanacağız.
+
+````
+docker network create gurme-network
+
+```
+
+## İpucu: Docker Ağ Bağdaştırıcısı Bulmak
+Docker kendi içinde oluşturduğu containerlara ulaşmak için ağ bağdaştırıcısında bizim için yeni bir ağ aygıtı oluşturuyor oluşturduğumuz containerlara yönlendirmeyi bu ip adresi ile yapacağız. Denetim Masası-> Ağ ve Paylaşım Merkezi kısmından bulabilirsiniz. Ekran görüntüsü eklenecek
+
+
+# 2. İhtiyaç duyulan Temel Gereksinimler
+
+Geliştirme yaptığımız ortamları kullanabilmek için bazı temel uygulama ve araçlara ihtiyacımız olacak. Nginx Proxy Manager, MariaDB, phpMyAdmin, mkcert gibi araçları kurulumu ile başlayıp ortamızı hazırlayacağız
+
+# 2.1 NGINX Proxy Manager
 
 ## Kullanım Amacı
 Nginx bir web server uygulaması bir techstack de bilgisayarımızda çalıştıracağımız projeler için SSL ve yerel bilgisayarımızdak domainleri ilk geleceği durak olacak.
@@ -45,14 +62,19 @@ Email:    admin@example.com
 Password: changeme
 ````
 
-
-
 Yeni domain ekleme ve bunu ilgili dockerlara yönlendirmeyi bu panelden yapacağız.
 
-## Docker Ağ Bağdaştırıcısı Bulmak
-Docker kendi içinde oluşturduğu containerlara ulaşmak için ağ bağdaştırıcısında bizim için yeni bir ağ aygıtı oluşturuyor oluşturduğumuz containerlara yönlendirmeyi bu ip adresi ile yapacağız. Denetim Masası-> Ağ ve Paylaşım Merkezi kısmından bulabilirsiniz.
+# 2.2 Mariadb Veritabanı Containerin Oluşturulması
 
+Mariadb dizinin içinde compose dosyası ile şifresiz mariadb containirimizi oluşturuyor. Laravel, Wordpress,Presta vs gibi sistemlerde süreki bu containerdaki db yi kullanacağız.
 
+[MariaDB containeri](https://hub.docker.com/_/mariadb)
+
+```
+cd mariadb
+docker-compose up -d
+```
+Kurulumdan sonra ``` docker ps ``` komutunda container görüntülenebilmeli
 
 # 3. mkcert
 
