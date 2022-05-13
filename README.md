@@ -12,7 +12,7 @@ https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi adresin
 
 Kullanacağımız containerları yerel makineden izole etmek için bridge bir network yaratıyoruz bu networku containerlarda kullanacağız.
 
-````
+```
 docker network create gurme-network
 
 ```
