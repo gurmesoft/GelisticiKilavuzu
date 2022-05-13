@@ -43,7 +43,7 @@ cd nginx-proxy-manager
 docker-compose up -d
 ```
 
-## Bitiş
+## Bitiş
 
 Container kurulumu bittiksen sonra yeni Arayüzde nginx-proxy-manager yeni containeri görüntülenebilir yada 
 ````
