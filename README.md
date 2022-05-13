@@ -27,6 +27,7 @@ docker-compose up -d
 ```
 
 ## Bitiş
+
 Container kurulumu bittiksen sonra yeni Arayüzde nginx-proxy-manager yeni containeri görüntülenebilir yada 
 ````
 docker ps
