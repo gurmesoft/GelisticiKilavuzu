@@ -13,7 +13,7 @@ https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi adresin
 Kullanacağımız containerları yerel makineden izole etmek için bridge bir network yaratıyoruz bu networku containerlarda kullanacağız.
 
 ```
-docker network create gurme-network
+docker network create -d bridge gurme-network
 
 ```
 
@@ -101,11 +101,37 @@ mkcert -install
 Her yeni proje için altaki kod satırı ile yeni sertifika oluşturulur
 
 ```
-mkcert kargo.gurmehub.dev 
+mkcert phpmyadmin.gurmehub.dev 
 ```
 
 komutu ile bulunduğumuz dizine içine bir ssl sertifikası oluşturacak ornekler dizinide örnekleri bulabilirsiniz.
 
+## Oluşturulan sertifikanın Reverse Proxy Tanıtılması
+
+### Sertifikanın Yüklenmesi
+http://127.0.0.1:81/nginx/certificates adresinden oluşturduğumuz serfitikayı custom olarak yüklüyoruz. 
+
+Add SSL Certificate->Custom
+
+Name: kullanılacak domain örnek phpmyadmin.gurmehub.dev
+Key: mkcertin oluşturduğu -key li dosya
+Cert: mkcertin oluşturduğu sertifika
+
+### Yönlendirmenin Eklenmesi
+
+http://127.0.0.1:81/nginx/proxy adresinden Add Proxy 
+
+Name: phpmyadmin.gurmehub.dev
+
+Çalıştırdığımız docker container portuna bakıp 127.0.0.1 ve port ile yönlendirme yapılmasını sağlamalıyız. 
+
+Örnek:
+
+Scheme:http
+Hostname: 127.0.0.1
+Port: 9080
+
+SSL sekmesinden bir önceki aşamada eklediğimiz ssl sertifikasını seçiyor ve reverse proxy seçeneklerini bitiriyoruz
 
 # 2.4 phpMyAdmin Kurulumu ve Kullanımı
 Veritabanına bağlanıp işlemlerimizi yapmak için geliştirme ortamına phpymadmin.gurmehub.dev adresine uygulamayı yapılandırıyoruz

@@ -10,9 +10,9 @@ services:
     volumes:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
-    networks:
-      - gurme-network
+    environment:
+      DISABLE_IPV6: 'true'
 networks:
-  api-network:
-    external: true
-    name: gurme-network
+  default:
+    external:
+      name: gurme-network
