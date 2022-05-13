@@ -1,14 +1,14 @@
 # devops
 devops ve geliştirme ortamları yaratma işleri
 
-# Docker Kurulumu
+# 1. Docker Kurulumu
 Docker sanallaştırma ve geliştirme ortamlarının yaratılması için gerekli olan uygulamamızı https://www.docker.com/get-started/ adresinden edinip kuruyoruz. Windows için ek paket kurulumuna ihtiyaç duyabiliyor. Uyarıları takip ederek eklere kurabilirsiniz.
 
 Kurulum sonrasında WSL 2 installtion is incomplete şeklide uyarı alırsanız.
 
 https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi adresinden güncellemeyi yüklemeniz gerekebilir.
 
-# NGINX Proxy Manager
+# 2. NGINX Proxy Manager
 
 ## Kullanım Amacı
 Nginx bir web server uygulaması bir techstack de bilgisayarımızda çalıştıracağımız projeler için SSL ve yerel bilgisayarımızdak domainleri ilk geleceği durak olacak.
@@ -43,7 +43,7 @@ Docker kendi içinde oluşturduğu containerlara ulaşmak için ağ bağdaştır
 
 
 
-# mkcert
+# 3. mkcert
 
 Kendi bilgisayarımızda ssl sertifikası oluşturmamıza yardımcı olacak uygulama.
 
