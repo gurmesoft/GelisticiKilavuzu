@@ -34,12 +34,18 @@ Password: changeme
 
 Yeni domain ekleme ve bunu ilgili dockerlara yönlendirmeyi bu panelden yapacağız.
 
+## Docker Ağ Bağdaştırıcısı Bulmak
+Docker kendi içinde oluşturduğu containerlara ulaşmak için ağ bağdaştırıcısında bizim için yeni bir ağ aygıtı oluşturuyor oluşturduğumuz containerlara yönlendirmeyi bu ip adresi ile yapacağız. Denetim Masası-> Ağ ve Paylaşım Merkezi kısmından bulabilirsiniz.
+
+
 
 # mkcert
 
-Kendi bilgisayarımızda ssl sertifikası oluşturmamıza yardımcı olacak uygulama
+Kendi bilgisayarımızda ssl sertifikası oluşturmamıza yardımcı olacak uygulama.
 
 (https://github.com/FiloSottile/mkcert)
+
+Kendi reposundan farklı platformları için kurabilmek için dökümanları mevcut dökümanları inceleyerek mkcert konsolda kullanılacak seviyeye getirebilirsiniz.
 
 ## Yeni SSL Sertifikası Oluşturma
 
@@ -50,5 +56,7 @@ mkcert -install
 Her yeni proje için altaki kod satırı ile yeni sertifika oluşturulur
 
 ```
-mkcert magento.gurmehub.dev 
+mkcert kargo.gurmehub.dev 
 ```
+
+komutu ile bulunduğumuz dizine içine bir ssl sertifikası oluşturacak ornekler dizinide örnekleri bulabilirsiniz.
