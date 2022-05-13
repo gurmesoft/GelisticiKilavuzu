@@ -4,6 +4,7 @@ version: "3.1"
 services:
   db:
     image: mariadb:latest
+    container_name: mariadb
     restart: always
     environment:
       MARIADB_USER: "root"
@@ -11,8 +12,12 @@ services:
       MARIADB_DATABASE: "gurmesoft"
       MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: true
       MARIADB_DATABASE: "gurmesoft"
-      
     volumes:
       - ./datadir:/var/lib/mysql
     ports:
       - "3306:3306"
+    networks:
+      - gurme-network
+networks:
+  gurme-network:
+    external: true
