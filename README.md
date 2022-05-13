@@ -4,6 +4,10 @@ devops ve geliştirme ortamları yaratma işleri
 # Docker Kurulumu
 Docker sanallaştırma ve geliştirme ortamlarının yaratılması için gerekli olan uygulamamızı https://www.docker.com/get-started/ adresinden edinip kuruyoruz. Windows için ek paket kurulumuna ihtiyaç duyabiliyor. Uyarıları takip ederek eklere kurabilirsiniz.
 
+Kurulum sonrasında WSL 2 installtion is incomplete şeklide uyarı alırsanız.
+
+https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi adresinden güncellemeyi yüklemeniz gerekebilir.
+
 # NGINX Proxy Manager
 
 ## Kullanım Amacı
@@ -46,6 +50,14 @@ Kendi bilgisayarımızda ssl sertifikası oluşturmamıza yardımcı olacak uygu
 (https://github.com/FiloSottile/mkcert)
 
 Kendi reposundan farklı platformları için kurabilmek için dökümanları mevcut dökümanları inceleyerek mkcert konsolda kullanılacak seviyeye getirebilirsiniz.
+
+### Ipucu Choco yu Hızlı Kurma Yöntemi
+
+```
+@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+```
+
+choco ile mkcerti kurarken windows komut satırını yönetici olarak açmanız gerekmektedir.
 
 ## Yeni SSL Sertifikası Oluşturma
 
