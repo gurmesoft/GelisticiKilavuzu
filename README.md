@@ -76,7 +76,7 @@ docker-compose up -d
 ```
 Kurulumdan sonra ``` docker ps ``` komutunda container görüntülenebilmeli
 
-# 3. mkcert
+# 2.3 mkcert
 
 Kendi bilgisayarımızda ssl sertifikası oluşturmamıza yardımcı olacak uygulama.
 
@@ -105,3 +105,19 @@ mkcert kargo.gurmehub.dev
 ```
 
 komutu ile bulunduğumuz dizine içine bir ssl sertifikası oluşturacak ornekler dizinide örnekleri bulabilirsiniz.
+
+
+# 2.4 phpMyAdmin Kurulumu ve Kullanımı
+Veritabanına bağlanıp işlemlerimizi yapmak için geliştirme ortamına phpymadmin.gurmehub.dev adresine uygulamayı yapılandırıyoruz
+
+## Kurulum
+```
+cd phpmyadmin
+docker-compose up -d
+```
+
+## hosts dosyası
+
+c:\windows\system32\etc\drivers\hosts altındaki dosyayı açıp için
+
+phpmyadmin.gurmehub.dev 127.0.0.1 satırını ekliyoruz
