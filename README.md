@@ -13,12 +13,42 @@ Daha detaylı anlatmak gerekirse https://kargo.gurmehub.dev => Nginx => localhos
 
 ## Nasıl Kurulur
 
-Komut satırında ilgili klasöre giriş yapıp docker-compose ile kurulumu yapabilirsiniz. 80 ve 443 nolu portu dinleyen bir uygulama varsa kapatmanız gerekiyor. Kurulum sonrasında bilgisayarınızdaki 80 nolu porta gelen istekleri artık nginx karşılamaya başlayacak. Kendi domainlerimizi eklemek ve ayar yapmak için http://localhost:81 nolu adresi kullanacağız.
+Komut satırında ilgili klasöre giriş yapıp docker-compose ile kurulumu yapabilirsiniz. 80 ve 443 nolu portu dinleyen bir uygulama varsa kapatmanız gerekiyor. Kurulum sonrasında bilgisayarınızdaki 80 nolu porta gelen istekleri artık nginx karşılamaya başlayacak. Kendi domainlerimizi eklemek ve ayar yapmak için http://127.0.0.1:81 nolu adresi kullanacağız.
 
-(https://nginxproxymanager.com/)
+[Nginx Proxy Manager](https://nginxproxymanager.com/)
 
 ```
 cd nginx-proxy-manager
 docker-compose up -d
 ```
 ## Yapılandırma
+
+http://127.0.0.1:81 adresinden 
+
+Öntanımlı kullanıcı ve şifresi
+
+````
+Email:    admin@example.com
+Password: changeme
+````
+
+Yeni domain ekleme ve bunu ilgili dockerlara yönlendirmeyi bu panelden yapacağız.
+
+
+# mkcert
+
+Kendi bilgisayarımızda ssl sertifikası oluşturmamıza yardımcı olacak uygulama
+
+(https://github.com/FiloSottile/mkcert)
+
+## Yeni SSL Sertifikası Oluşturma
+
+Tek seferlik olarak kök sertifikaları kurulumu yapılır.
+````
+mkcert -install 
+````
+Her yeni proje için altaki kod satırı ile yeni sertifika oluşturulur
+
+```
+mkcert magento.gurmehub.dev 
+```
