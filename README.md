@@ -25,6 +25,14 @@ Komut satırında ilgili klasöre giriş yapıp docker-compose ile kurulumu yapa
 cd nginx-proxy-manager
 docker-compose up -d
 ```
+
+## Bitiş
+Container kurulumu bittiksen sonra yeni Arayüzde nginx-proxy-manager yeni containeri görüntülenebilir yada 
+````
+docker ps
+````
+ ile çalışan bütün containler listelenip görüntülenebilir.
+
 ## Yapılandırma
 
 http://127.0.0.1:81 adresinden 
@@ -35,6 +43,8 @@ http://127.0.0.1:81 adresinden
 Email:    admin@example.com
 Password: changeme
 ````
+
+
 
 Yeni domain ekleme ve bunu ilgili dockerlara yönlendirmeyi bu panelden yapacağız.
 
