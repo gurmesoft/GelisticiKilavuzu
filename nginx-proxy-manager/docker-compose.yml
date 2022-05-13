@@ -3,6 +3,7 @@ services:
   app:
     image: "jc21/nginx-proxy-manager:latest"
     restart: unless-stopped
+    container_name: reverseproxy
     ports:
       - "80:80"
       - "81:81"
@@ -12,7 +13,9 @@ services:
       - ./letsencrypt:/etc/letsencrypt
     environment:
       DISABLE_IPV6: 'true'
+    networks:
+      - gurme-network
+
 networks:
-  default:
-    external:
-      name: gurme-network
+  gurme-network:
+    external: true
