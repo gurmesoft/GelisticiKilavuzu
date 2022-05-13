@@ -123,13 +123,12 @@ http://127.0.0.1:81/nginx/proxy adresinden Add Proxy
 
 Name: phpmyadmin.gurmehub.dev
 
-Çalıştırdığımız docker container portuna bakıp 127.0.0.1 ve port ile yönlendirme yapılmasını sağlamalıyız. 
-
+Çalıştırdığımız docker container adına göre buradan ekleme yapıyoruz ``` docker ps ``` containerların ismine ulaşılabilir
 Örnek:
 
 Scheme:http
-Hostname: 127.0.0.1
-Port: 9080
+Hostname: phpmyadmin
+Port: 80
 
 SSL sekmesinden bir önceki aşamada eklediğimiz ssl sertifikasını seçiyor ve reverse proxy seçeneklerini bitiriyoruz
 
