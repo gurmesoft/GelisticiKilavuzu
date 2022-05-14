@@ -149,3 +149,12 @@ docker-compose up -d
 c:\windows\system32\etc\drivers\hosts altındaki dosyayı açıp için
 
 phpmyadmin.gurmehub.dev 127.0.0.1 satırını ekliyoruz
+
+## SSL sertifikası ve Yönlendirme
+
+mkcert bölünümnde anlatıldığı gibi yeni bir ssl sertifikası oluşturup reverseproxy mize bunu tanıyıoruz. ve phpmyadmin.gurmehub.dev adresi ile phpmyadmine ulaşabiliyoruz.
+
+# Bağlantı
+Host: mariadb
+Kullanıcı Adı:root
+Şifre: 
