@@ -28,8 +28,6 @@ Geliştirme yaptığımız ortamları kullanabilmek için bazı temel uygulama v
 ## Kullanım Amacı
 Nginx bir web server uygulaması bir techstack de bilgisayarımızda çalıştıracağımız projeler için SSL ve yerel bilgisayarımızdak domainleri ilk geleceği durak olacak. 443,80 ve 81 nolu portların bilgisayarınızda kullanılmadığından emin olun. Oluşturacağımız reverseproxy containeri artık bu portları devir alıp yönlendirme işlemlerini yapacak. 
 
-Eğer işlem başarlı olduyda reverseproxy adında bir docker containerimiz yaratılmış ve http://reverseproxy:81 portunda bizi bekleyen bir panel olması gerekiyor
-
 Daha detaylı anlatmak gerekirse https://kargo.gurmehub.dev => Nginx => localhost:8000 (laravel kargo dockeri) şeklinde çalışacak.
 
 ## Nasıl Kurulur
