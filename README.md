@@ -19,10 +19,6 @@ docker network create -d bridge gurme-network
 
 ```
 
-## İpucu: Docker Ağ Bağdaştırıcısı Bulmak
-Docker kendi içinde oluşturduğu containerlara ulaşmak için ağ bağdaştırıcısında bizim için yeni bir ağ aygıtı oluşturuyor oluşturduğumuz containerlara yönlendirmeyi bu ip adresi ile yapacağız. Denetim Masası-> Ağ ve Paylaşım Merkezi kısmından bulabilirsiniz. Ekran görüntüsü eklenecek
-
-
 # 2. İhtiyaç duyulan Temel Gereksinimler
 
 Geliştirme yaptığımız ortamları kullanabilmek için bazı temel uygulama ve araçlara ihtiyacımız olacak. Nginx Proxy Manager, MariaDB, phpMyAdmin, mkcert gibi araçları kurulumu ile başlayıp ortamızı hazırlayacağız
