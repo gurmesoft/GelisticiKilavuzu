@@ -95,12 +95,14 @@ choco ile mkcerti kurarken windows komut satırını yönetici olarak açmanız 
 
 ## Yeni SSL Sertifikası Oluşturma
 
-Tek seferlik olarak kök sertifikaları kurulumu yapılır.
+Tek seferlik olarak kök sertifikaları kurulumu yapılır. Bu daha sonra oluşturacağımız domainlerin sertifikalarına tarayıcılarımızın güvenmesi için gerekli bir işlemdir.
+
 ````
 mkcert -install 
 ````
 Her yeni proje için altaki kod satırı ile yeni sertifika oluşturulur
 
+Örnek: Sertifika oluşturma
 ```
 mkcert phpmyadmin.gurmehub.dev 
 ```
