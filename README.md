@@ -2,7 +2,9 @@
 devops ve geliştirme ortamları yaratma işleri
 
 # 1. Docker Kurulumu
-Docker sanallaştırma ve geliştirme ortamlarının yaratılması için gerekli olan uygulamamızı https://www.docker.com/get-started/ adresinden edinip kuruyoruz. Windows için ek paket kurulumuna ihtiyaç duyabiliyor. Uyarıları takip ederek eklere kurabilirsiniz.
+Docker sanallaştırma ve geliştirme ortamlarının yaratılması için gerekli olan uygulama https://www.docker.com/get-started/ adresinden edinip kuruyoruz. 
+
+Windows için ek paket kurulumuna ihtiyaç duyabiliyor. Uyarıları takip ederek eklere kurabilirsiniz.
 
 Kurulum sonrasında WSL 2 installtion is incomplete şeklide uyarı alırsanız.
 
