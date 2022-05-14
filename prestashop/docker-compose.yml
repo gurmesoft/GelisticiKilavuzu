@@ -1,0 +1,24 @@
+version: '3.1'
+services:
+  prestashop_iyzibazaar:
+    image: prestashop/prestashop:latest
+    container_name: prestashop_iyzibazaar
+    restart: always
+    ports:
+      - 8081:80
+    environment:
+      - DB_SERVER=mariadb
+      - DB_USER=root
+      - DB_NAME=prestashop_iyzibazaar
+      - ADMIN_MAIL=admin
+      - ADMIN_PASSWD=admin
+      - PS_ENABLE_SSL=1
+      - PS_DOMAIN=prestashop_iyzibazaar
+      - PS_INSTALL_AUTO=0
+      - PS_HOST_MODE=1
+      - PS_INSTALL_DB=0
+    networks:
+      - gurme-network
+networks:
+  gurme-network:
+    external: true

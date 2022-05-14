@@ -1,0 +1,22 @@
+version: "3.1"  
+services: 
+  wordpress:
+    image: wordpress:latest
+    container_name: iyzibazaar_wordpress
+    volumes:
+      - wordpress_data:/var/www/html
+    ports:
+      - "8001:80"
+    restart: always
+    environment:
+      - WORDPRESS_DB_HOST=mariadb
+      - WORDPRESS_DB_USER=root
+      - WORDPRESS_DB_PASSWORD=""
+      - WORDPRESS_DB_NAME=iyzibazaar
+    networks:
+      - gurme-network
+volumes:
+  wordpress_data: {}
+networks:
+  gurme-network:
+    external: true
