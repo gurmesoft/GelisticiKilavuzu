@@ -19,6 +19,9 @@ docker network create -d bridge gurme-network
 
 ```
 
+## İpuçları
+* Docker containerları bir isimle oluşturuluduğunda başka bir container dan diğerine ismi ile network bağlantısı yapılabilir. Örnek: phpmyadmin containeri veritabanına mariadb adı ile bağlantı sağlayabilir
+
 # 2. İhtiyaç duyulan Temel Gereksinimler
 
 Geliştirme yaptığımız ortamları kullanabilmek için bazı temel uygulama ve araçlara ihtiyacımız olacak. Nginx Proxy Manager, MariaDB, phpMyAdmin, mkcert gibi araçları kurulumu ile başlayıp ortamızı hazırlayacağız
@@ -92,12 +95,14 @@ choco ile mkcerti kurarken windows komut satırını yönetici olarak açmanız 
 
 ## Yeni SSL Sertifikası Oluşturma
 
-Tek seferlik olarak kök sertifikaları kurulumu yapılır.
+Tek seferlik olarak kök sertifikaları kurulumu yapılır. Bu daha sonra oluşturacağımız domainlerin sertifikalarına tarayıcılarımızın güvenmesi için gerekli bir işlemdir.
+
 ````
 mkcert -install 
 ````
 Her yeni proje için altaki kod satırı ile yeni sertifika oluşturulur
 
+Örnek: Sertifika oluşturma
 ```
 mkcert phpmyadmin.gurmehub.dev 
 ```
@@ -144,3 +149,12 @@ docker-compose up -d
 c:\windows\system32\etc\drivers\hosts altındaki dosyayı açıp için
 
 phpmyadmin.gurmehub.dev 127.0.0.1 satırını ekliyoruz
+
+## SSL sertifikası ve Yönlendirme
+
+mkcert bölünümnde anlatıldığı gibi yeni bir ssl sertifikası oluşturup reverseproxy mize bunu tanıyıoruz. ve phpmyadmin.gurmehub.dev adresi ile phpmyadmine ulaşabiliyoruz.
+
+# Bağlantı
+Host: mariadb
+Kullanıcı Adı:root
+Şifre: 
