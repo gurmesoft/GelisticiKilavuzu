@@ -19,6 +19,9 @@ docker network create -d bridge gurme-network
 
 ```
 
+## İpuçları
+* Docker containerları bir isimle oluşturuluduğunda başka bir container dan diğerine ismi ile network bağlantısı yapılabilir. Örnek: phpmyadmin containeri veritabanına mariadb adı ile bağlantı sağlayabilir
+
 # 2. İhtiyaç duyulan Temel Gereksinimler
 
 Geliştirme yaptığımız ortamları kullanabilmek için bazı temel uygulama ve araçlara ihtiyacımız olacak. Nginx Proxy Manager, MariaDB, phpMyAdmin, mkcert gibi araçları kurulumu ile başlayıp ortamızı hazırlayacağız
