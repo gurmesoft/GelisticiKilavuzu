@@ -11,6 +11,7 @@ ARG timezone="Europe/Istanbul"
 RUN apk update && apk add --no-cache \
     bash \
     openssh-client \
+    openssl \
     supervisor \
     tzdata \
     gettext \
@@ -73,12 +74,16 @@ RUN rm /etc/nginx/conf.d/default.conf && \
 
 RUN chmod -R 775 /var/www; chown vscode -R /var/www 
 
+ADD ../../cert /cert
 # copy files
 COPY bashrc /root/.bashrc
 COPY supervisord.conf /etc/supervisord.conf
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY nginx-sites.conf /etc/nginx/sites-enabled/default
-COPY ssl/localhost-key.pem /etc/nginx/certificates/localhost-key.pem 
+COPY cert/rootCA.pem /root/cert
+COPY cert/rootCA.key /root/cert
+COPY cert/server.csr /root/cert
+
 COPY ssl/localhost.pem /etc/nginx/certificates/localhost.pem 
 COPY nginx-sites.conf /etc/nginx/sites-enabled/default
 COPY php-fpm.conf /etc/php7/php-fpm.d/www.conf
@@ -86,6 +91,10 @@ COPY xdebug.ini /etc/php/conf.d
 COPY index.php /var/www/public
 COPY start /root/start
 
+RUN openssl req -new -sha256 -nodes -out server.csr -newkey rsa:2048 -keyout /etc/nginx/certificates/localhost.key \
+    openssl x509 -req -in /root/cert/server.csr -CA /root/cert/rootCA.pem -CAkey /root/cert/rootCA.key -CAcreateserial -out /etc/nginx/certificates/localhost.crt -days 1000 -sha256 -extfile /root/cert/v3.ext \
+    chmod 644 /etc/nginx/certificates/localhost.key \
+    rm -rf /root/cert
 # expose
 EXPOSE 443
 
