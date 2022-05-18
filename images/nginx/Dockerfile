@@ -85,19 +85,17 @@ COPY bashrc /root/.bashrc
 COPY supervisord.conf /etc/supervisord.conf
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY nginx-sites.conf /etc/nginx/sites-enabled/default
-
-
-COPY ssl/localhost.pem /etc/nginx/certificates/localhost.pem 
-COPY nginx-sites.conf /etc/nginx/sites-enabled/default
 COPY php-fpm.conf /etc/php7/php-fpm.d/www.conf
 COPY xdebug.ini /etc/php/conf.d
 COPY index.php /var/www/public
 COPY start /root/start
 
-RUN openssl req -new -sha256 -nodes -out server.csr -newkey rsa:2048 -keyout /etc/nginx/certificates/localhost.key; \
+RUN mkdir -p /etc/nginx/certificates; \
+    openssl req -new -sha256 -nodes -out server.csr -newkey rsa:2048 -keyout /etc/nginx/certificates/localhost.key; \
     openssl x509 -req -in /cert/server.csr -CA /cert/rootCA.pem -CAkey /cert/rootCA.key -CAcreateserial -out /etc/nginx/certificates/localhost.crt -days 1000 -sha256 -extfile /cert/v3.ext; \
-    chmod 644 /etc/nginx/certificates/localhost.key; \
-    rm -rf /cert;rm -rf /cert.zip && exit 0; exit 1
+    chmod 644 /etc/nginx/certificates/localhost.key;
+
+#rm -rf /cert;rm -rf /cert.zip && exit 0; exit 1
 # expose
 EXPOSE 443
 
