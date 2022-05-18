@@ -1,0 +1,43 @@
+version: '3.1'
+services:
+    mariadb:
+      image: mariadb:latest
+      restart: always
+      environment:
+        - MARIADB_USER=root
+        - MARIADB_ROOT_PASSWORD=root
+        - MARIADB_DATABASE=kargo.shopify
+  
+    phpmyadmin:
+      image: phpmyadmin
+      restart: always
+      ports:
+        - 2801:80
+      environment:
+        - PMA_ARBITRARY=1
+        - PMA_HOST=mariadb
+        - PMA_USER=root
+        - PMA_PASSWORD=root
+
+    laravel.shopify:
+      image: docker.io/gurmesoft/nginx-php7.4
+      environment:
+        - GITHUB_REPO=gurmesoft@github.com/gurmesoft/shopify-gurme-kargo
+        - DB_HOST=mariadb
+        - DB_USERNAME=root
+        - DB_PASSWORD=root
+        - DB_DATABASE=kargo.shopify
+        - APP_ENV=local
+        - APP_DEBUG=true
+      ports:
+        - 2802:443
+        - 28002:8000
+        - 29003:9003
+      volumes:
+        - kargo.shopify:/var/www/
+      depends_on:
+        - mariadb
+        - phpmyadmin
+volumes:
+  kargo.shopify:
+    driver: local
