@@ -4,8 +4,8 @@ services:
     image: mailhog/mailhog
     restart: always
     ports:
-      - "2803:8025"
-      - "2802:1025"
+      - "1004:8025"
+      - "1005:1025"
 
   mariadb:
     image: mariadb:latest
@@ -13,13 +13,13 @@ services:
     environment:
       - MARIADB_USER=root
       - MARIADB_ROOT_PASSWORD=root
-      - MARIADB_DATABASE=kargo.shopify
+      - MARIADB_DATABASE=iyzibazaar.wordpress
 
   phpmyadmin:
     image: phpmyadmin
     restart: always
     ports:
-      - 2801:80
+      - 1003:80
 
     environment:
       - PMA_ARBITRARY=1
@@ -27,30 +27,33 @@ services:
       - PMA_USER=root
       - PMA_PASSWORD=root
 
-  laravel.shopify:
-    image: docker.io/gurmesoft/nginx-php7.4
+  iyzibazaar.wordpress:
+    image: docker.io/gurmesoft/wordpress
     environment:
-      - DB_HOST=mariadb
-      - DB_USERNAME=root
-      - DB_PASSWORD=root
-      - DB_DATABASE=kargo.shopify
+      - WORDPRESS_DB_HOST=mariadb
+      - WORDPRESS_DB_USER=root
+      - WORDPRESS_DB_PASSWORD=root
+      - WORDPRESS_DB_NAME=iyzibazaar.wordpress
+      - WORDPRESS_DEBUG=true
+      - WORDPRESS_HOME=https://localhost:1000
+      - WORDPRESS_SITEURL=https://localhost:1001
       - APP_ENV=local
       - APP_DEBUG=true
       - MAILHOG=mailhog
-      - MAILHOG_PORT=2802
+      - MAILHOG_PORT=1005
 
     ports:
-      - 443:443
-      - 28000:80
-      - 29000:9003
+      - 1000:443
+      - 1001:80
+      - 1002:9003
 
     volumes:
-      - kargo.shopify:/var/www/
+      - iyzibazaar.wordpress:/var/www/
 
     depends_on:
       - mariadb
       - phpmyadmin
 
 volumes:
-  kargo.shopify:
+  iyzibazaar.wordpress:
     driver: local

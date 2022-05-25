@@ -4,8 +4,8 @@ services:
     image: mailhog/mailhog
     restart: always
     ports:
-      - "2803:8025"
-      - "2802:1025"
+      - "1004:8025"
+      - "1005:1025"
 
   mariadb:
     image: mariadb:latest
@@ -13,13 +13,13 @@ services:
     environment:
       - MARIADB_USER=root
       - MARIADB_ROOT_PASSWORD=root
-      - MARIADB_DATABASE=kargo.shopify
+      - MARIADB_DATABASE=iyzibazaar.wordpress
 
   phpmyadmin:
     image: phpmyadmin
     restart: always
     ports:
-      - 2801:80
+      - 1003:80
 
     environment:
       - PMA_ARBITRARY=1
@@ -27,30 +27,30 @@ services:
       - PMA_USER=root
       - PMA_PASSWORD=root
 
-  laravel.shopify:
-    image: docker.io/gurmesoft/nginx-php7.4
+  iyzibazaar.wordpress:
+    image: docker.io/gurmesoft/prestashop
     environment:
-      - DB_HOST=mariadb
-      - DB_USERNAME=root
-      - DB_PASSWORD=root
-      - DB_DATABASE=kargo.shopify
-      - APP_ENV=local
-      - APP_DEBUG=true
+      - PRESTASHOP_HOST=localhost
+      - PRESTASHOP_DATABASE_HOST=mariadb
+      - PRESTASHOP_DATABASE_PORT_NUMBER=3306
+      - PRESTASHOP_DATABASE_USER=root
+      - PRESTASHOP_DATABASE_ROOT=root
+      - PRESTASHOP_DATABASE_NAME=iyzibazaar.prestashop
       - MAILHOG=mailhog
-      - MAILHOG_PORT=2802
+      - MAILHOG_PORT=1005
 
     ports:
-      - 443:443
-      - 28000:80
-      - 29000:9003
+      - 3000:443
+      - 3001:8080
+      - 3002:8443
 
     volumes:
-      - kargo.shopify:/var/www/
+      - iyzibazaar.prestashop:/bitnami/prestashop
 
     depends_on:
       - mariadb
       - phpmyadmin
 
 volumes:
-  kargo.shopify:
+  iyzibazaar.prestashop:
     driver: local
