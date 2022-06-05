@@ -22,4 +22,4 @@ WORKDIR "/var/www"
 
 # entrypoint  "/root/first-init"
 
-CMD ["/run.sh"]
+ENTRYPOINT ["/run.sh","/root/start"]

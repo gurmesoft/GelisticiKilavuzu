@@ -80,7 +80,7 @@ RUN set -x; \
 
 # prepare folders
 RUN rm /etc/nginx/conf.d/default.conf && \
-    mkdir -p /var/www/public /var/log/supervisord
+    mkdir -p /var/www /var/log/supervisord
 
 RUN chmod -R 775 /var/www; chown -R vscode:www-data -R /var/www 
 

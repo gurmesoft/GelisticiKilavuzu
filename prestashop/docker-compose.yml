@@ -13,7 +13,7 @@ services:
     environment:
       - MARIADB_USER=root
       - MARIADB_ROOT_PASSWORD=root
-      - MARIADB_DATABASE=iyzibazaar.wordpress
+      - MARIADB_DATABASE=iyzibazaar.prestashop
 
   phpmyadmin:
     image: phpmyadmin
@@ -27,7 +27,7 @@ services:
       - PMA_USER=root
       - PMA_PASSWORD=root
 
-  iyzibazaar.wordpress:
+  iyzibazaar.prestashop:
     image: docker.io/gurmesoft/prestashop
     environment:
       - PRESTASHOP_HOST=localhost

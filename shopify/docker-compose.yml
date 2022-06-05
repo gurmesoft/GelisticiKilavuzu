@@ -37,7 +37,7 @@ services:
       - APP_ENV=local
       - APP_DEBUG=true
       - MAILHOG=mailhog
-      - MAILHOG_PORT=2802
+      - MAILHOG_PORT=1025
 
     ports:
       - 443:443

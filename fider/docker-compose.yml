@@ -1,0 +1,46 @@
+version: '2'
+services:
+  db:
+    restart: always
+    image: postgres:12
+    volumes:
+      - /var/fider/pg_datax:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: fider
+      POSTGRES_PASSWORD: s0m3g00dp4ssw0rd
+  app:
+    restart: always
+    image: getfider/fider:stable
+    ports:
+      - "8001:3000"
+    environment:
+      # Public Host Name
+      BASE_URL: https://feedback.gurmehub.com
+
+      # Connection string to the PostgreSQL database
+      DATABASE_URL: postgres://fider:s0m3g00dp4ssw0rd@db:5432/fider?sslmode=disable
+
+      # Generate a 512-bit secret here https://www.allkeysgenerator.com/Random/Security-Encryption-Key-Generator.aspx
+      JWT_SECRET: "&F)J@McQfTjWnZr4u7x!A%D*G-KaPdRgUkXp2s5v8y/B?E(H+MbQeThVmYq3t6w9"
+
+      # From which account e-mails will be sent
+      EMAIL_NOREPLY: feedback@gurmehub.com
+
+      ###
+      # EMAIL
+      # Either EMAIL_MAILGUN_* or EMAIL_SMTP_* or EMAIL_AWSSES_* is required
+      ###
+
+      # EMAIL_MAILGUN_API: key-yourkeygoeshere
+      # EMAIL_MAILGUN_DOMAIN: yourdomain.com
+
+      EMAIL_SMTP_HOST: postal.gurmesoft.com
+      EMAIL_SMTP_PORT: 587
+      EMAIL_SMTP_USERNAME: gurmewoo/gurmesoft
+      EMAIL_SMTP_PASSWORD: ZLnr1zAWUtGZwZdG98mb4A5O
+      EMAIL_SMTP_ENABLE_STARTTLS: 'true'
+
+      HOST_MODE: multi
+      # EMAIL_AWSSES_REGION: us-east-1
+      # EMAIL_AWSSES_ACCESS_KEY_ID: youraccesskeygoeshere
+      # EMAIL_AWSSES_SECRET_ACCESS_KEY: yoursecretkeygoeshere
