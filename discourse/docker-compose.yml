@@ -9,11 +9,15 @@ services:
       - ALLOW_EMPTY_PASSWORD=yes
       - POSTGRESQL_USERNAME=gurmehub_forum
       - POSTGRESQL_DATABASE=gurmehub_forum
+    ports:
+      - 5433:5432
   redis:
     image: docker.io/bitnami/redis:6.0
     environment:
       # ALLOW_EMPTY_PASSWORD is recommended only for development.
       - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - 6378:6379
     volumes:
       - 'redis_data:/bitnami/redis'
   discourse:
@@ -30,7 +34,7 @@ services:
       - ALLOW_EMPTY_PASSWORD=yes
       - DISCOURSE_HOST=forum.gurmehub.com
       - DISCOURSE_DATABASE_HOST=postgresql
-      - DISCOURSE_DATABASE_PORT_NUMBER=5432
+      - DISCOURSE_DATABASE_PORT_NUMBER=5433
       - DISCOURSE_DATABASE_USER=gurmehub_forum
       - DISCOURSE_DATABASE_NAME=gurmehub_forum
       - DISCOURSE_REDIS_HOST=redis
@@ -50,7 +54,7 @@ services:
       - ALLOW_EMPTY_PASSWORD=yes
       - DISCOURSE_HOST=forum.gurmehub.com
       - DISCOURSE_DATABASE_HOST=postgresql
-      - DISCOURSE_DATABASE_PORT_NUMBER=5432
+      - DISCOURSE_DATABASE_PORT_NUMBER=5433
       - DISCOURSE_DATABASE_USER=gurmehub_forum
       - DISCOURSE_DATABASE_NAME=gurmehub_forum
       - DISCOURSE_REDIS_HOST=redis
