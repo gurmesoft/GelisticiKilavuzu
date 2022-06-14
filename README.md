@@ -25,6 +25,10 @@ Projemizde çalışacak yerel domain hangi ip adresine karşılık geldiğini **
 
 satırı şeklinde girmeliyiz. Yaptığımızın teyitini almak için komut satırında **ping iysapp.gurmeapps.local** komutu 127.0.0.1'e istek yapıyor olması gerekir
 
+## 2.2 Yerel SSL Sertifikasyonunun Oluşturulması
+
+Bütün projelerde ortak olarak kullanılan wildcard bir SSL sertifikamız cert dizini içinde mevcut fakat bu sertifikanın tarayıcımız tarafından tanımlanıp doğrulanabilmesi için. [mkcert](https://github.com/FiloSottile/mkcert) uygulamasını kurup `mkcert -install` komutu ile tarayıcımıza kök sertifikayı kurmamız gerekmektedir.
+
 
 # 2. VSCode
 Docker containerlarına VSCode içinden erişebilmek için Vscode'a bazı eklentileri kurmamız gerekiyor.
