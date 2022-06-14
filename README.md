@@ -15,8 +15,15 @@ Kurulum sonrasında WSL 2 installtion is incomplete şeklide uyarı alırsanız.
 https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi adresinden güncellemeyi yüklemeniz gerekebilir.
 
 # 2. Hazırlık ve Bilinmesi Gerekenler
-Yaptığımız projelerin türlerine ve işleyişlerine baktığımızda önümüze geliştirme ortamlarında engel çıkmaması için canlı ortama benzer bir düzen yaratmamız gerekiyor. Bunun için lokal gerçek olmayan bir alanadı ve SSL ile çalışmamız Cross Origin, CSRF gibi geliştirmede önümüze çıkan problemleri bertaraf etmemizi sağlayacak. Geliştirme ortamı ve canlı ortamın yapısını bir birine yaklaştırmış olacağız. Bunu 
+Yaptığımız projelerin türlerine ve işleyişlerine baktığımızda önümüze geliştirme ortamlarında engel çıkmaması için canlı ortama benzer bir düzen yaratmamız gerekiyor. Bunun için lokal gerçek olmayan bir alanadı ve SSL ile çalışmamız Cross Origin, CSRF gibi geliştirmede önümüze çıkan problemleri bertaraf etmemizi sağlayacak. Geliştirme ortamı ve canlı ortamın yapısını bir birine yaklaştırmış olacağız. Bu ortamı sağlamamız için üç temel şeye ihtiyacımız var.
 
+## 2.1 hosts Dosyasının Düzenlenmesi
+
+Projemizde çalışacak yerel domain hangi ip adresine karşılık geldiğini **C:\Windows\System32\drivers\etc** dizini altında **hosts** dosyasına
+
+`127.0.0.1 iysapp.gurmeapps.local `
+
+satırı şeklinde girmeliyiz. Yaptığımızın teyitini almak için komut satırında **ping iysapp.gurmeapps.local** komutu 127.0.0.1'e istek yapıyor olması gerekir
 
 
 # 2. VSCode
