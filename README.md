@@ -14,6 +14,11 @@ Kurulum sonrasında WSL 2 installtion is incomplete şeklide uyarı alırsanız.
 
 https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi adresinden güncellemeyi yüklemeniz gerekebilir.
 
+# 2. Hazırlık ve Bilinmesi Gerekenler
+Yaptığımız projelerin türlerine ve işleyişlerine baktığımızda önümüze geliştirme ortamlarında engel çıkmaması için canlı ortama benzer bir düzen yaratmamız gerekiyor. Bunun için lokal gerçek olmayan bir alanadı ve SSL ile çalışmamız Cross Origin, CSRF gibi geliştirmede önümüze çıkan problemleri bertaraf etmemizi sağlayacak. Geliştirme ortamı ve canlı ortamın yapısını bir birine yaklaştırmış olacağız. Bunu 
+
+
+
 # 2. VSCode
 Docker containerlarına VSCode içinden erişebilmek için Vscode'a bazı eklentileri kurmamız gerekiyor.
 
