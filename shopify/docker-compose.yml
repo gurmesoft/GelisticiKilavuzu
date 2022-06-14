@@ -28,7 +28,7 @@ services:
       - PMA_PASSWORD=root
 
   laravel.shopify:
-    image: docker.io/gurmesoft/nginx-php7.4
+    image: docker.io/gurmesoft/laravel:8.6
     environment:
       - DB_HOST=mariadb
       - DB_USERNAME=root
