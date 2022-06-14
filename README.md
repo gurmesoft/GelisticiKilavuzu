@@ -1,5 +1,8 @@
-# devops
-Bu repoda GurmeSoft da yazılım geliştirme yaparken kullandığımız Dockerfile dosyaları ve ilgili ortamlar için örnek docker-compose.yml dosyaları bulunmaktadır. 
+# Geliştirme Ortamının Oluşturulması
+
+Proje geliştirirken kullanılan kütüphaneler, uygulamalar (PHP, MySQL, phpMyAdmin) gibi bütün geliştirme ortamlarında tutarlılık sağlayabilmek için docker containerlar üzerinde geliştirme yapıyoruz. Geliştirme ortamanın yaratılması için öncelikli olarak yapılması gereken bir kaç işlem ve sonrasında [Projeler](https://github.com/gurmesoft/projeler) reposundan çalışacağınız projenin containerini canlandırmanız gerekecektir.
+
+Hadi başlayalım ve ihtiyacımız olan düzenlemeleri ve kurulumları yaparak başlayalım.
 
 
 # 1. Docker Kurulumu
