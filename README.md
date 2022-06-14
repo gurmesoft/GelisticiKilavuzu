@@ -37,8 +37,3 @@ Dizin yapısı
 -- devcontainer.json // VSCode'un 
 ```
 
-## Projelerin Listesi ve Container Port Dağılımı
-
-| Adı           | Reposu                              | Cool  |
-| ------------- |:-----------------------------------:| -----:|
-| iysapp        | https://github.com/gurmesoft/iysapp | $1600 |
