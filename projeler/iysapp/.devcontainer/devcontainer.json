@@ -1,0 +1,21 @@
+{
+	"name": "iys Docker Container Ortamı",
+	"dockerComposeFile": [
+		"../docker-compose.yml"
+	],
+	"service": "laravel.iysapp",
+	"settings": {
+		"git.path": "c:/Program Files/Git/cmd/cmd.exe"
+	},
+	"workspaceFolder": "/var/www/",
+	"remoteUser": "vscode",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"xdebug.php-debug",
+				"bmewburn.vscode-intelephense-client",
+				"obliviousharmony.vscode-php-codesniffer"
+			]
+		}
+	}
+}
