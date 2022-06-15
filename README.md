@@ -63,22 +63,60 @@ Proje containerları yapılarına göre içlerinde uygulamalar ile beraber gelec
 
 *Var olan bir projeye dahil olacaksanız containeri çalıştırdıktan sonra repoyu çekmeyi unutmayın*
 
-## Sorular:
+## Sorular / Olası Problemler:
 
 ### Üzerinde Çalıştığım Dosyalar Nerede? 
 Container içindeki çalışman dockerdaki volumes biriminde duruyor kendi pcde bir yerde direk dizin olarak durmuyacaktır. Docker uygulaması üzerinden volumlerini görüntüleyebilirsin.
 
-### Containeri Silersem Ne Olur
+### Containeri Silersem Ne Olur?
 Container silindiğinde volume direk silinmiyor aynı container tekrar canlandığında aynı volume kullanabildiğinden kaldığı yerden çalışmaya devam edebiliyor bu uygulama güncellemesi için güzel bir ortam yaratıyor.
 
 ### Her Makinede Container Kendimize Mi Özel?
 Ever herkesin oluşturduğu container kendi bilgisayarında çalışan küçük bir kopya oluyor. 
+
+## Docker Desktop ile vsCode ile Containere Bağlanmanın farkı nedir?
+
+VSCode ile açılan containerı kullandığımız eklentiler, git kullanıcımız gibi bilgiler paylaşılıyor ve terminal çalıştırıldığında vscode kullanıcısı ile işlem yapıldığından yazma ve okuma izinlerinde bozulma olmuyor. Desktop uygulaması direk konsola bağlantı sağlar ve geliştirme ortamıyla bir bağlantısı yoktur.
+
+## Dosya Yazma İzinleri Hakkında
+
+Web server ve bizim bağlantı kurduğumuz kullanıcının farklı olması durumdan dolayı bazı durumlarda yazma ve okuma izinleri ile ilgili problem yaşanabiliyor. 
+
+### Unix Yazma İzinlerini Anlamak 
+
+Burda konuyu çok uzatmatan kısa geçecek şekilde anlatacağım fakat detaylar için https://www.yusufsezer.com.tr/linux-dosya-ve-dizin-izinleri/ adresini inceleyebilirsiniz
+
+`-rw-r--r-- root root          3958 Apr 12 16:37 README.md`
+Boşluklara göre bölersek;
+
+İlk İbare: Yazma/Okuma/Çalıştırma izinlerini ifade eder. 
+İkinci: Sahibi olan kullanıcı
+Üçüncü: Sahibi olan grup
+
+Bizim uygulamalarımızın çalışabilmesi için **/var/www** dizinin altında bütün dosya ve dizinlerin www-data grubu www-data kullanıcısı tarafından sahipliklerinin olması ve **775** bitli yazma/okuma/çalıştırma izinlerine ihtiyacımız var. Bu nasıl yapacağız. 
+
+Containerımıza root olarak giriş yaptıktan sonra
+
+Bu tip durumlarda **Docker Desktop** uygulamasından containerin konsoluna bağlandığımızda root kullanıcı ile giriş yapmış oluyoruz. (konsolun başında # varsa root girişi yapılmıştır). 
+
+`
+cd /var/wwww;chown -R vscode:www-data *;chmod -R 775 *  
+`
+komutları ile yetki ve izinleri değiştirebiliriz. Ardından `ls -la` komutu ile dizindeki dosyaların ve dizinlerin yetkileri ve sahipliklerini listeleyebiliriz.
 
 
 # 3. XDebug
 
 XDebug PHP ile geliştirme yaparken hata ayıklamamızı kolaylaştıran bir araç oluşturduğumuz imagelerin PHP modüllerinde xdebug seçeneği aktiftir. XDebug kullanarak daha kolay hata ayıklayabilirsiniz.
 
+## Yeni Bir Proje Başlatmak
+
+Öncesinde burada bulunmayan bir proje ile ilgili çalışma yapacaksınız Fikret ya da Fuat ile iletişime geçmeniz gerekmektedir. 
+
+## Geliştirme Ortamı ve Reposu Açılmış Bir Projede Çalışma Başlatmak
+
+Bu repoyu çektiğinizi varsayarak devam ediyor ve üstte bahsedilen container başlatma kısmındaki gibi ilgili projenin containeri çalıştırıp konsoluna **root** olarak bağlanarak ilk önce **/var/www** dizini temizlenmeli ``rm -rf *; rm -rf *.`` komutları ile dizin boşaltılır ve ardından **VsCode** ile terminale bağlanıp repoyu clone laya bilir ve çalışmaya başlayabilirsin.  
+`git clone https://github.com/gurmesoft/kargo-entegrator .` . ifadesi proje dizini oluşturmayın var olan dizini kullanmayı sağlayacaktır. 
 
 ## Projelerin Listesi ve Container Port Dağılımı
 
