@@ -78,3 +78,10 @@ Ever herkesin oluşturduğu container kendi bilgisayarında çalışan küçük 
 # 3. XDebug
 
 XDebug PHP ile geliştirme yaparken hata ayıklamamızı kolaylaştıran bir araç oluşturduğumuz imagelerin PHP modüllerinde xdebug seçeneği aktiftir. XDebug kullanarak daha kolay hata ayıklayabilirsiniz.
+
+
+## Projelerin Listesi ve Container Port Dağılımı
+
+| Adı                                 | Reposu                              | phpmyadmin            |
+| ------------------------------------|:-----------------------------------:| ---------------------:|
+| https://iysapp.gurmeapps.local      | https://github.com/gurmesoft/iysapp |  http://localhost:2801
