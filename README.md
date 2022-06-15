@@ -61,17 +61,8 @@ Projelerimizin geliştirme containerlarına https://github.com/gurmesoft/projele
 ## Konsoldan Container Oluşturmak
 Konsolda containeri çalıştırmak için ilgili projenin dizine gelip `docker-compose up -d` ile proje dizinindeki dosyayı tetikleyerek gerekli containleri oluşturabilirsin
 
+Proje containerları yapılarına göre içlerinde uygulamalar ile beraber gelecektir eğer yeni bir projeye başlıyorsak bunun üzerinden kullanım ile devam edebilirsin fakat var olan bir repoyu çekeceksek içindeki dosyaları kaldırıp terminal bağlantısı ile ilgili **repoyu clone** layabilirsin
+
 # 3. XDebug
 
 XDebug PHP ile geliştirme yaparken hata ayıklamamızı kolaylaştıran bir araç oluşturduğumuz imagelerin PHP modüllerinde xdebug seçeneği aktiftir. XDebug kullanarak daha kolay hata ayıklayabilirsiniz.
-
-# Örnek Proje
-
-## VSCode, XDebug, Wordpress
-
-Dizin yapısı
-```
--.devcontainer
--- devcontainer.json // VSCode'un 
-```
-
