@@ -23,7 +23,8 @@ services:
     volumes:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
-    networks:
-      - gurme-networks
+
 networks:
-  gurme-networks:
+  default:
+    external:
+      name: gurme-network
