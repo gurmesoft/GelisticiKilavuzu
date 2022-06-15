@@ -63,6 +63,18 @@ Konsolda containeri çalıştırmak için ilgili projenin dizine gelip `docker-c
 
 Proje containerları yapılarına göre içlerinde uygulamalar ile beraber gelecektir eğer yeni bir projeye başlıyorsak bunun üzerinden kullanım ile devam edebilirsin fakat var olan bir repoyu çekeceksek içindeki dosyaları kaldırıp terminal bağlantısı ile ilgili **repoyu clone** layabilirsin
 
+## Sorular:
+
+### Üzerinde Çalıştığım Dosyalar Nerede? 
+Container içindeki çalışman dockerdaki volumes biriminde duruyor kendi pcde bir yerde direk dizin olarak durmuyacaktır. Docker uygulaması üzerinden volumlerini görüntüleyebilirsin.
+
+### Containeri Silersem Ne Olur
+Container silindiğinde volume direk silinmiyor aynı container tekrar canlandığında aynı volume kullanabildiğinden kaldığı yerden çalışmaya devam edebiliyor bu uygulama güncellemesi için güzel bir ortam yaratıyor.
+
+### Her Makinede Container Kendimize Mi Özel?
+Ever herkesin oluşturduğu container kendi bilgisayarında çalışan küçük bir kopya oluyor. 
+
+
 # 3. XDebug
 
 XDebug PHP ile geliştirme yaparken hata ayıklamamızı kolaylaştıran bir araç oluşturduğumuz imagelerin PHP modüllerinde xdebug seçeneği aktiftir. XDebug kullanarak daha kolay hata ayıklayabilirsiniz.
