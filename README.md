@@ -63,7 +63,7 @@ Konsolda containeri çalıştırmak için ilgili projenin dizine gelip `docker-c
 
 Proje containerları yapılarına göre içlerinde uygulamalar ile beraber gelecektir eğer yeni bir projeye başlıyorsak bunun üzerinden kullanım ile devam edebilirsin fakat var olan bir repoyu çekeceksek içindeki dosyaları kaldırıp terminal bağlantısı ile ilgili **repoyu clone** layabilirsin
 
-/*Var olan bir projeye dahil olacaksanız containeri çalıştırdıktan sonra repoyu çekmeyi unutmayın*/
+*Var olan bir projeye dahil olacaksanız containeri çalıştırdıktan sonra repoyu çekmeyi unutmayın*
 
 ## Sorular:
 
