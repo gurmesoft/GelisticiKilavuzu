@@ -61,24 +61,22 @@ Projelerimizin geliştirme containerlarına https://github.com/gurmesoft/projele
 ## Konsoldan Container Oluşturmak
 Konsolda containeri çalıştırmak için ilgili projenin dizine gelip `docker-compose up -d` ile proje dizinindeki dosyayı tetikleyerek gerekli containleri oluşturabilirsin
 
-# 2. SSL Sertifikasının Kuruluması
+Proje containerları yapılarına göre içlerinde uygulamalar ile beraber gelecektir eğer yeni bir projeye başlıyorsak bunun üzerinden kullanım ile devam edebilirsin fakat var olan bir repoyu çekeceksek içindeki dosyaları kaldırıp terminal bağlantısı ile ilgili **repoyu clone** layabilirsin
 
-cert dizinindeki localhost.crt çift tıklama yolu ile gelen pencereden **Yerel Makine** sonraki ile devam edip. **Tüm sertifikaları aşağıdaki depolama alana yerleştir** seçeneği seçilip Gözat butonundan çıkan **Güvenilen Kök Sertifika Yetkilileri** seçip kök sertifika bilgisayarımıza yüklenir. Bu işlem https://localhost:port şeklindeki bağlantılarımızda aldığımız SSL hatasını gidermek için gereklidir.
-<img width="402" alt="sertifika-secimi" src="https://user-images.githubusercontent.com/38686/169140569-05c12941-b9e3-4072-ba59-a8f45ab6fa21.png">
+*Var olan bir projeye dahil olacaksanız containeri çalıştırdıktan sonra repoyu çekmeyi unutmayın*
+
+## Sorular:
+
+### Üzerinde Çalıştığım Dosyalar Nerede? 
+Container içindeki çalışman dockerdaki volumes biriminde duruyor kendi pcde bir yerde direk dizin olarak durmuyacaktır. Docker uygulaması üzerinden volumlerini görüntüleyebilirsin.
+
+### Containeri Silersem Ne Olur
+Container silindiğinde volume direk silinmiyor aynı container tekrar canlandığında aynı volume kullanabildiğinden kaldığı yerden çalışmaya devam edebiliyor bu uygulama güncellemesi için güzel bir ortam yaratıyor.
+
+### Her Makinede Container Kendimize Mi Özel?
+Ever herkesin oluşturduğu container kendi bilgisayarında çalışan küçük bir kopya oluyor. 
 
 
-
-# 4. XDebug
+# 3. XDebug
 
 XDebug PHP ile geliştirme yaparken hata ayıklamamızı kolaylaştıran bir araç oluşturduğumuz imagelerin PHP modüllerinde xdebug seçeneği aktiftir. XDebug kullanarak daha kolay hata ayıklayabilirsiniz.
-
-# Örnek Proje
-
-## VSCode, XDebug, Wordpress
-
-Dizin yapısı
-```
--.devcontainer
--- devcontainer.json // VSCode'un 
-```
-
