@@ -1,8 +1,6 @@
 # Geliştirme Ortamının Oluşturulması
 
-Proje geliştirirken kullanılan kütüphaneler, uygulamalar (PHP, MySQL, phpMyAdmin) gibi bütün geliştirme ortamlarında tutarlılık sağlayabilmek için docker containerlar üzerinde geliştirme yapıyoruz. Geliştirme ortamanın yaratılması için öncelikli olarak yapılması gereken bir kaç işlem ve sonrasında [Projeler](https://github.com/gurmesoft/projeler) reposundan çalışacağınız projenin containerini canlandırmanız gerekecektir. 
-
-Projeler reposu bu reponun bir sub modülü olarak eklidir ayrıyetten projeler reposunu çekmenize gerek yok sadece bu repoyu çekmeniz ve güncel tutmanız yeterlidir.
+Proje geliştirirken kullanılan kütüphaneler, uygulamalar (PHP, MySQL, phpMyAdmin) gibi bütün geliştirme ortamlarında tutarlılık sağlayabilmek için docker containerlar üzerinde geliştirme yapıyoruz. Geliştirme ortamanın yaratılması için öncelikli olarak yapılması gereken bir kaç işlem ve sonrasında [Projeler] dizininden çalışacağınız projenin containerini canlandırmanız gerekecektir. 
 
 Hadi başlayalım ve ihtiyacımız olan düzenlemeleri ve kurulumları yaparak başlayalım.
 
@@ -50,7 +48,7 @@ Docker containerlarına VSCode içinden erişebilmek için Vscode'a bazı eklent
 
 # 3. Proje Containları
 
-Projelerimizin geliştirme containerlarına https://github.com/gurmesoft/projeler reposunda bulunmakta girişte bahsettiğim gibi bu reponun submodulü olduğu için ayrı olarak çekmenize gerek yok
+Projelerimizin geliştirme containerlarına projeler dizininde bulunmaktadır.
 
 ## Projeyi Editörden Başlatmak
 
