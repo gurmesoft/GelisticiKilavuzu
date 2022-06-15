@@ -35,11 +35,11 @@ Bütün projelerde ortak olarak kullanılan wildcard bir SSL sertifikamız cert 
 
 Bu repoyu çekip nginx-proxy-manager dizini altındaki docker containeri çalıştırılmalı. Burada dikkat edilmesi gereken husus bu container 81,80 ve 443 portunu dinleyip gelen istekleri projeler için çalıştıracağımız containerlara yönlendirecek. Bilgisayarınızda başka bu portu dinleyen uygulamalar olmadığından ya da çalışmadığından emin olun. XAMMP, LocalWP gibi. Dizin içindeki dosyalar projelerin yönlendirmelerini otomatik yapıyor olacaktır. Fakat ilgili projeyi **hosts** dosyasına eklediğinizden ve projenin containerin çalışır olduğundan emin olmalısınız.
 
-`docker-compose up -d` ile Nginx Proxy Manager containeri çalıştırılabilir. Ayarları ye yapılandırmalara ulaşmak için http://localhost:81 adresini ziyaret edin
-`
-Kullanıcı Adı: admin@gurmesoft.com
-Şifre: adminadmin
-`
+`docker-compose up -d` 
+ile Nginx Proxy Manager containeri çalıştırılabilir. Ayarları ye yapılandırmalara ulaşmak için http://localhost:81 adresini ziyaret edin
+`Kullanıcı Adı: admin@gurmesoft.com Şifre: adminadmin `
+
+Yeni projeler eklendikte dizin altındaki ayarlara ekleneceğinden bu repoyu çekip containeri `docker-compose up -d ` ile tekrar canlandırmalısınız
 
 # 2. VSCode
 Docker containerlarına VSCode içinden erişebilmek için Vscode'a bazı eklentileri kurmamız gerekiyor.
@@ -50,7 +50,7 @@ Docker containerlarına VSCode içinden erişebilmek için Vscode'a bazı eklent
 
 # 3. Proje Containları
 
-Projelerimizin geliştirme containerlarına https://github.com/gurmesoft/projeler reposunu kendi bilgisayarına çekmelisin 
+Projelerimizin geliştirme containerlarına https://github.com/gurmesoft/projeler reposunda bulunmakta girişte bahsettiğim gibi bu reponun submodulü olduğu için ayrı olarak çekmenize gerek yok
 
 ## Projeyi Editörden Başlatmak
 
