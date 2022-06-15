@@ -96,9 +96,7 @@ Containerımıza root olarak giriş yaptıktan sonra
 Bu tip durumlarda **Docker Desktop** uygulamasından containerin konsoluna bağlandığımızda root kullanıcı ile giriş yapmış oluyoruz. (konsolun başında # varsa root girişi yapılmıştır). 
 
 `
-cd /var/wwww  
-chown -R www-data:www-data *  
-chmod -R 775 *  
+cd /var/wwww;chown -R www-data:www-data *;chmod -R 775 *  
 `
 komutları ile yetki ve izinleri değiştirebiliriz. Ardından `ls -la` komutu ile dizindeki dosyaların ve dizinlerin yetkileri ve sahipliklerini listeleyebiliriz.
 
