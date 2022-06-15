@@ -4,9 +4,6 @@
 Firma bünyesinde geliştirilen projelerin docker containerlarını oluşturmak ve bir indeks oluşturmak
 için bu repoyu kullanabiliriz.
 
+## Containerlar
 
-## Projelerin Listesi ve Container Port Dağılımı
-
-| Adı                                 | Reposu                              | phpmyadmin            |
-| ------------------------------------|:-----------------------------------:| ---------------------:|
-| https://iysapp.gurmeapps.local      | https://github.com/gurmesoft/iysapp |  http://localhost:2801
+Her projenin containeri burada oluşturulacak ve hazır edilecektir.
