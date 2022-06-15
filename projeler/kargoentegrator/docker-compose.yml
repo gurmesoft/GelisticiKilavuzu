@@ -1,0 +1,61 @@
+version: '3.1'
+services:
+  mailhog:
+    image: mailhog/mailhog
+    restart: always
+    ports:
+      - "2903:8025"
+      - "2902:1025"
+
+  mariadb:
+    image: mariadb:latest
+    restart: always
+    environment:
+      - MARIADB_USER=root
+      - MARIADB_ROOT_PASSWORD=root
+      - MARIADB_DATABASE=kargoentegrator
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 2901:80
+
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mariadb
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+
+  laravel.kargoentegrator:
+    container_name: kargoentegrator
+    image: docker.io/gurmesoft/laravel:8.6
+    environment:
+      - DB_HOST=mariadb
+      - DB_USERNAME=root
+      - DB_PASSWORD=root
+      - DB_DATABASE=kargoentegrator
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - MAILHOG=mailhog
+      - MAILHOG_PORT=1025
+
+    ports:
+      - 30000:9003
+      - 2904:443
+      - 2905:80
+
+    volumes:
+      - kargoentegrator:/var/www/
+
+    depends_on:
+      - mariadb
+      - phpmyadmin
+
+volumes:
+  kargoentegrator:
+    driver: local
+networks:
+  default:
+    external:
+      name: gurme-network

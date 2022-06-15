@@ -84,4 +84,5 @@ XDebug PHP ile geliştirme yaparken hata ayıklamamızı kolaylaştıran bir ara
 
 | Adı                                 | Reposu                              | phpmyadmin            |
 | ------------------------------------|:-----------------------------------:| ---------------------:|
-| https://iysapp.gurmeapps.local      | https://github.com/gurmesoft/iysapp |  http://localhost:2801
+| https://iysapp.gurmeapps.local      | https://github.com/gurmesoft/iysapp |  http://localhost:2804
+| https://kargoentegrator.gurmeapps.local      | https://github.com/gurmesoft/kargo-entegrator |  http://localhost:2904
