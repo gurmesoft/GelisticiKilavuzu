@@ -1,5 +1,0 @@
-nginx-proxy-manager/data/*
-nginx-proxy-manager/letsencrypt/*
-nginx-proxy-manager/database.sqlite
-mariadb/datadir
-chatwoot/data
