@@ -100,7 +100,7 @@ Containerımıza root olarak giriş yaptıktan sonra
 Bu tip durumlarda **Docker Desktop** uygulamasından containerin konsoluna bağlandığımızda root kullanıcı ile giriş yapmış oluyoruz. (konsolun başında # varsa root girişi yapılmıştır). 
 
 `
-cd /var/wwww;chown -R vscode:www-data *;chmod -R 775 *  
+cd /var/www;chown -R vscode:www-data *;chmod -R 775 *  
 `
 komutları ile yetki ve izinleri değiştirebiliriz. Ardından `ls -la` komutu ile dizindeki dosyaların ve dizinlerin yetkileri ve sahipliklerini listeleyebiliriz.
 
@@ -115,7 +115,7 @@ XDebug PHP ile geliştirme yaparken hata ayıklamamızı kolaylaştıran bir ara
 
 ## Geliştirme Ortamı ve Reposu Açılmış Bir Projede Çalışma Başlatmak
 
-Bu repoyu çektiğinizi varsayarak devam ediyor ve üstte bahsedilen container başlatma kısmındaki gibi ilgili projenin containeri çalıştırıp konsoluna **root** olarak bağlanarak ilk önce **/var/www** dizini temizlenmeli ``rm -rf *; rm -rf *.`` komutları ile dizin boşaltılır ve ardından **VsCode** ile terminale bağlanıp repoyu clone laya bilir ve çalışmaya başlayabilirsin.  
+Bu repoyu çektiğinizi varsayarak devam ediyor ve üstte bahsedilen container başlatma kısmındaki gibi ilgili projenin containeri çalıştırıp konsoluna **root** olarak bağlanarak ilk önce **/var/www** dizini temizlenmeli ``rm -rf *; rm -rf .*`` komutları ile dizin boşaltılır ve ardından **VsCode** ile terminale bağlanıp repoyu clone laya bilir ve çalışmaya başlayabilirsin.  
 `git clone https://github.com/gurmesoft/kargo-entegrator .` . ifadesi proje dizini oluşturmayın var olan dizini kullanmayı sağlayacaktır. 
 
 ## Projelerin Listesi ve Container Port Dağılımı
