@@ -99,3 +99,4 @@
 [17/Jun/2022:06:13:34 +0000] 404 - GET http wpad.home "/wpad.dat" [Client 172.19.0.1] [Length 150] [Gzip -] "WinHttp-Autoproxy-Service/5.1" "-"
 [17/Jun/2022:06:23:34 +0000] 404 - GET http wpad.home "/wpad.dat" [Client 172.19.0.1] [Length 150] [Gzip -] "WinHttp-Autoproxy-Service/5.1" "-"
 [17/Jun/2022:06:33:34 +0000] 404 - GET http wpad.home "/wpad.dat" [Client 172.19.0.1] [Length 150] [Gzip -] "WinHttp-Autoproxy-Service/5.1" "-"
+[17/Jun/2022:06:43:34 +0000] 404 - GET http wpad.home "/wpad.dat" [Client 172.19.0.1] [Length 150] [Gzip -] "WinHttp-Autoproxy-Service/5.1" "-"

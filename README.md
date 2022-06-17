@@ -124,3 +124,4 @@ Bu repoyu çektiğinizi varsayarak devam ediyor ve üstte bahsedilen container b
 | ------------------------------------|:-----------------------------------:| ---------------------:|
 | https://iysapp.gurmeapps.local      | https://github.com/gurmesoft/iysapp |  http://localhost:2804
 | https://kargoentegrator.gurmeapps.local      | https://github.com/gurmesoft/kargo-entegrator |  http://localhost:2904
+| https://prestabazaar.gurmeapps.local      | https://github.com/gurmesoft/prestabazaar |  http://localhost:3004

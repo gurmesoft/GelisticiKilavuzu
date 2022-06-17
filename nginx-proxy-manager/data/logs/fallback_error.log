@@ -100,3 +100,4 @@
 2022/06/17 06:13:34 [error] 311#311: *4 open() "/var/www/html/wpad.dat" failed (2: No such file or directory), client: 172.19.0.1, server: localhost-nginx-proxy-manager, request: "GET /wpad.dat HTTP/1.1", host: "wpad.home"
 2022/06/17 06:23:34 [error] 311#311: *5 open() "/var/www/html/wpad.dat" failed (2: No such file or directory), client: 172.19.0.1, server: localhost-nginx-proxy-manager, request: "GET /wpad.dat HTTP/1.1", host: "wpad.home"
 2022/06/17 06:33:34 [error] 311#311: *6 open() "/var/www/html/wpad.dat" failed (2: No such file or directory), client: 172.19.0.1, server: localhost-nginx-proxy-manager, request: "GET /wpad.dat HTTP/1.1", host: "wpad.home"
+2022/06/17 06:43:34 [error] 329#329: *7 open() "/var/www/html/wpad.dat" failed (2: No such file or directory), client: 172.19.0.1, server: localhost-nginx-proxy-manager, request: "GET /wpad.dat HTTP/1.1", host: "wpad.home"
