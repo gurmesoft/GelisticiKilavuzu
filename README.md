@@ -27,7 +27,7 @@ satırı şeklinde girmeliyiz. Yaptığımızın teyitini almak için komut sat�
 
 ## 2.2 Yerel SSL Sertifikasyonunun Oluşturulması
 
-Bütün projelerde ortak olarak kullanılan wildcard bir SSL sertifikamız cert dizini içinde mevcut fakat bu sertifikanın tarayıcımız tarafından tanımlanıp doğrulanabilmesi için. [mkcert](https://github.com/FiloSottile/mkcert) uygulamasını kurup `mkcert -install` komutu ile tarayıcımıza kök sertifikayı kurmamız gerekmektedir.
+Bütün projelerde ortak olarak kullanılan wildcard bir SSL sertifikamız cert dizini içinde mevcut fakat bu sertifikanın tarayıcımız tarafından tanımlanıp doğrulanabilmesi için. [mkcert](https://github.com/FiloSottile/mkcert) uygulamasını kurup `mkcert -install` komutu ile tarayıcımıza kök sertifikayı kurmamız gerekmektedir. Sonrasında bu repounun cert dizininde **rootCA.crt** dosyasını çift tıklama **Sertifika Yükle** -> **Geçerli Kullanıcı** Tüm Sertifikaları aşagıdaki depolama alanına yerleştir kısmına seçip gözat ardından **Güvenilen Kök Sertifika Yetkilileri** kısmı seçilip kök sertifikamız tarayıcılar tarafından tanılacak şekle getirilmelidir.
 
 ## 2.3 Nginx Proxy Manager
 
