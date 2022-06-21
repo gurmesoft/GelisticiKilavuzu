@@ -1,9 +1,9 @@
 {
-	"name": "Kargo Entegretor Docker Container Ortamı",
+	"name": "PrestaBazaar Docker Container Ortamı",
 	"dockerComposeFile": [
 		"../docker-compose.yml"
 	],
-	"service": "laravel.kargoentegrator",
+	"service": "presta.prestabazaar",
 	"settings": {
 		"git.path": "c:/Program Files/Git/cmd/cmd.exe"
 	},
