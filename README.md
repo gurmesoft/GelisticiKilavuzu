@@ -120,8 +120,8 @@ Bu repoyu çektiğinizi varsayarak devam ediyor ve üstte bahsedilen container b
 
 ## Projelerin Listesi ve Container Port Dağılımı
 
-| Adı                                 | Reposu                              | phpmyadmin            |
-| ------------------------------------|:-----------------------------------:| ---------------------:|
-| https://iysapp.gurmeapps.local      | https://github.com/gurmesoft/iysapp |  http://localhost:2804
-| https://kargoentegrator.gurmeapps.local      | https://github.com/gurmesoft/kargo-entegrator |  http://localhost:2904
-| https://prestabazaar.gurmeapps.local      | https://github.com/gurmesoft/prestabazaar |  http://localhost:3004
+| Adı                                     | Reposu                                            | phpmyadmin             | Dizin
+| ----------------------------------------|:-------------------------------------------------:| ----------------------:| ---------: |
+| https://iysapp.gurmeapps.local          | https://github.com/gurmesoft/iysapp               |  http://localhost:2804 | [projeler/prestabazaar](https://github.com/gurmesoft/GelisticiKilavuzu/tree/master/projeler/prestabazaar)
+| https://kargoentegrator.gurmeapps.local | https://github.com/gurmesoft/kargo-entegrator     |  http://localhost:2904 |
+| https://prestabazaar.gurmeapps.local    | https://github.com/gurmesoft/prestabazaar         |  http://localhost:3004 |
