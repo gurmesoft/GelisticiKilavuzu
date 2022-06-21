@@ -16,8 +16,9 @@ services:
       MYSQL_ROOT_PASSWORD: prestabazaar
       MYSQL_DATABASE: prestabazaar
     restart: always
-  prestashop:
+  presta.prestabazaar:
     image: docker.io/gurmesoft/prestashop
+    container_name: prestabazaar
     environment:
       PS_INSTALL_AUTO: 1
       DB_PASSWD: prestabazaar

@@ -7,7 +7,7 @@
 	"settings": {
 		"git.path": "c:/Program Files/Git/cmd/cmd.exe"
 	},
-	"workspaceFolder": "/var/www/",
+	"workspaceFolder": "/var/www/html",
 	"remoteUser": "vscode",
 	"customizations": {
 		"vscode": {
