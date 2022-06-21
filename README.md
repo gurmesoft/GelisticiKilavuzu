@@ -122,6 +122,6 @@ Bu repoyu çektiğinizi varsayarak devam ediyor ve üstte bahsedilen container b
 
 | Adı                                     | Reposu                                            | phpmyadmin             | Dizin
 | ----------------------------------------|:-------------------------------------------------:| ----------------------:| ---------: |
-| https://iysapp.gurmeapps.local          | https://github.com/gurmesoft/iysapp               |  http://localhost:2804 | [projeler/prestabazaar](https://github.com/gurmesoft/GelisticiKilavuzu/tree/master/projeler/prestabazaar)
-| https://kargoentegrator.gurmeapps.local | https://github.com/gurmesoft/kargo-entegrator     |  http://localhost:2904 |
-| https://prestabazaar.gurmeapps.local    | https://github.com/gurmesoft/prestabazaar         |  http://localhost:3004 |
+| https://iysapp.gurmeapps.local          | https://github.com/gurmesoft/iysapp               |  http://localhost:2804 | [projeler/iysapp](https://github.com/gurmesoft/GelisticiKilavuzu/tree/master/projeler/iysapp)
+| https://kargoentegrator.gurmeapps.local | https://github.com/gurmesoft/kargo-entegrator     |  http://localhost:2904 | [projeler/kargoentegrator](https://github.com/gurmesoft/GelisticiKilavuzu/tree/master/projeler/kargoentegrator)
+| https://prestabazaar.gurmeapps.local    | https://github.com/gurmesoft/prestabazaar         |  http://localhost:3004 | [projeler/prestabazaar](https://github.com/gurmesoft/GelisticiKilavuzu/tree/master/projeler/prestabazaar)
