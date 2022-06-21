@@ -21,14 +21,21 @@ services:
     container_name: prestabazaar
     environment:
       PS_INSTALL_AUTO: 1
+      PS_SHOP_DEFAULT: 1
       DB_PASSWD: prestabazaar
       DB_NAME: prestabazaar
       DB_SERVER: mysql
       DB_PREFIX: ps
-      PS_DOMAIN: prestabazaar.gurmeapps.local
       PS_COUNTRY: tr
       PS_LANGUAGE: tr
       PS_DEV_MODE: 1
-      ADMIN_PASSWD: admin
+      PS_DOMAIN: prestabazaar.gurmeapps.local
+      PS_ENABLE_SSL: 1
+      ADMIN_PASSWD: adminadmin
+      ADMIN_MAIL: admin@gurmesoft.com
     ports:
       - "3004:80"
+networks:
+  default:
+    external:
+      name: gurme-network
