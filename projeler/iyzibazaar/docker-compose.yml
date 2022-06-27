@@ -55,6 +55,11 @@ services:
     depends_on:
       - mariadb
       - phpmyadmin
+
 volumes:
   iyzibazaar:
   db:
+networks:
+  default:
+    external:
+      name: gurme-network

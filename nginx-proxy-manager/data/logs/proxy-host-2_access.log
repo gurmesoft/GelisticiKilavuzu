@@ -1,0 +1,1 @@
+[27/Jun/2022:14:03:57 +0000] - - 499 - GET https kargoentegrator.gurmeapps.local "/" [Client 172.26.0.1] [Length 0] [Gzip -] [Sent-to kargoentegrator] "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36" "http://localhost:81/"

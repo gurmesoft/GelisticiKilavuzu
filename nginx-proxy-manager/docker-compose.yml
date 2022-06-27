@@ -25,4 +25,6 @@ services:
       - ./letsencrypt:/etc/letsencrypt
 
 networks:
-  gurme-network:
+  default:
+    external:
+      name: gurme-network

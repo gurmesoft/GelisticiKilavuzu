@@ -55,3 +55,7 @@ services:
 volumes:
   kargoentegrator:
     driver: local
+networks:
+  default:
+    external:
+      name: gurme-network

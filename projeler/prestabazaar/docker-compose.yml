@@ -36,4 +36,6 @@ services:
     ports:
       - "3001:80"
 networks:
-  gurme-network:
+  default:
+    external:
+      name: gurme-network

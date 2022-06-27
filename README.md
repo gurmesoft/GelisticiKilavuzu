@@ -29,7 +29,10 @@ satırı şeklinde girmeliyiz. Yaptığımızın teyitini almak için komut sat�
 
 Bütün projelerde ortak olarak kullanılan wildcard bir SSL sertifikamız cert dizini içinde mevcut fakat bu sertifikanın tarayıcımız tarafından tanımlanıp doğrulanabilmesi için. [mkcert](https://github.com/FiloSottile/mkcert) uygulamasını kurup `mkcert -install` komutu ile tarayıcımıza kök sertifikayı kurmamız gerekmektedir. Sonrasında bu repounun cert dizininde **rootCA.crt** dosyasını çift tıklama **Sertifika Yükle** -> **Geçerli Kullanıcı** Tüm Sertifikaları aşagıdaki depolama alanına yerleştir kısmına seçip gözat ardından **Güvenilen Kök Sertifika Yetkilileri** kısmı seçilip kök sertifikamız tarayıcılar tarafından tanılacak şekle getirilmelidir.
 
-## 2.3 Nginx Proxy Manager
+## 2.3 Docker Networkun yaratılması
+ Reverse proxynin içerdeki containerlara yönlendirme yapabilmesi için **gurme-network** adında bir network oluşturmamız gerekiyorki containerlar birbiri arasında haberleşebilsin
+`docker network create gurme-network` 
+## 2.4 Nginx Proxy Manager
 
 Bu repoyu çekip nginx-proxy-manager dizini altındaki docker containeri çalıştırılmalı. Burada dikkat edilmesi gereken husus bu container 81,80 ve 443 portunu dinleyip gelen istekleri projeler için çalıştıracağımız containerlara yönlendirecek. Bilgisayarınızda başka bu portu dinleyen uygulamalar olmadığından ya da çalışmadığından emin olun. XAMMP, LocalWP gibi. Dizin içindeki dosyalar projelerin yönlendirmelerini otomatik yapıyor olacaktır. Fakat ilgili projeyi **hosts** dosyasına eklediğinizden ve projenin containerin çalışır olduğundan emin olmalısınız.
 
@@ -39,7 +42,7 @@ ile Nginx Proxy Manager containeri çalıştırılabilir. Ayarları ye yapıland
 
 Yeni projeler eklendikte dizin altındaki ayarlara ekleneceğinden bu repoyu çekip containeri `docker-compose up -d ` ile tekrar canlandırmalısınız
 
-# 2. VSCode
+# 2.5 VSCode
 Docker containerlarına VSCode içinden erişebilmek için Vscode'a bazı eklentileri kurmamız gerekiyor.
 
 * Docker
