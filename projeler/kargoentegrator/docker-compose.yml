@@ -55,5 +55,3 @@ services:
 volumes:
   kargoentegrator:
     driver: local
-networks:
-  gurme-network:

@@ -55,5 +55,3 @@ services:
 volumes:
   iysapp:
     driver: local
-networks:
-  gurme-network:

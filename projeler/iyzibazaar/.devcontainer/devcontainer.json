@@ -3,7 +3,7 @@
 	"dockerComposeFile": [
 		"../docker-compose.yml"
 	],
-	"service": "laravel.iysapp",
+	"service": "wordpress.iyzibazaar",
 	"settings": {
 		"git.path": "c:/Program Files/Git/cmd/cmd.exe"
 	},
