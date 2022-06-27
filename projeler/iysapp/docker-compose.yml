@@ -56,6 +56,4 @@ volumes:
   iysapp:
     driver: local
 networks:
-  default:
-    external:
-      name: gurme-network
+  gurme-network:
