@@ -53,7 +53,7 @@ services:
       - phpmyadmin
 
 volumes:
-  kargoentegrator:
+  omnibazaar-api:
     driver: local
 networks:
   default:
