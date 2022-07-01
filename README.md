@@ -77,6 +77,7 @@ Container silindiğinde volume direk silinmiyor aynı container tekrar canlandı
 ### Her Makinede Container Kendimize Mi Özel?
 Ever herkesin oluşturduğu container kendi bilgisayarında çalışan küçük bir kopya oluyor. 
 
+
 ## Docker Desktop ile vsCode ile Containere Bağlanmanın farkı nedir?
 
 VSCode ile açılan containerı kullandığımız eklentiler, git kullanıcımız gibi bilgiler paylaşılıyor ve terminal çalıştırıldığında vscode kullanıcısı ile işlem yapıldığından yazma ve okuma izinlerinde bozulma olmuyor. Desktop uygulaması direk konsola bağlantı sağlar ve geliştirme ortamıyla bir bağlantısı yoktur.

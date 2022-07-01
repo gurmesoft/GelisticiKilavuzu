@@ -1,0 +1,68 @@
+version: '3.1'
+services:
+  mailhog:
+    image: mailhog/mailhog
+    restart: always
+    ports:
+      - "5006:8025"
+      - "5005:1025"
+
+  mariadb:
+    image: mariadb:latest
+    restart: always
+    environment:
+      - MARIADB_USER=root
+      - MARIADB_ROOT_PASSWORD=root
+      - MARIADB_DATABASE=omnibazaar
+    volumes:
+      - db:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 5004:80
+
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mariadb
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+
+  wordpress.omnibazaar:
+    container_name: omnibazaar
+    image: docker.io/gurmesoft/woocommerce:latest
+    
+    environment:
+      - WORDPRESS_DB_HOST=mariadb
+      - WORDPRESS_DB_USER=root
+      - WORDPRESS_DB_PASSWORD=root
+      - WORDPRESS_DB_NAME=omnibazaar
+      - WORDPRESS_HOME=http://omnibazaar.gurmeapps.local
+      - WORDPRESS_SITEURL=http://omnibazaar.gurmeapps.local
+      - WORDPRESS_TITLE=omnibazaar
+      - WORDPRESS_ADMIN=admin@gurmesoft.com
+      - WORDPRESS_EMAIL=admin@gurmesoft.com
+      - WORDPRESS_PASSWORD=adminadmin
+      - WORDPRESS_DEBUG=true
+      - MAILHOG=mailhog
+      - MAILHOG_PORT=4025
+
+    ports:
+      - 5003:9003
+      - 5001:80
+
+    volumes:
+      - omnibazaar:/var/www
+
+    depends_on:
+      - mariadb
+      - phpmyadmin
+
+volumes:
+  omnibazaar:
+  db:
+networks:
+  default:
+    external: true
+    name: gurme-network
